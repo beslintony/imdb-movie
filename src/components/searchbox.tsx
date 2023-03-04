@@ -35,7 +35,7 @@ export default function Searchbox() {
 				id="my-modal"
 				onClick={() => handleSearchBox()}
 				className="modal-toggle"
-				checked={shouldSearchboxOpen}
+				defaultChecked={shouldSearchboxOpen}
 				autoFocus={true}
 			/>
 			<label htmlFor="my-modal" className="modal cursor-pointer">

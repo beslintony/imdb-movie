@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 enum Theme {
 	Dark = "dark",
@@ -15,7 +15,7 @@ export default function CssMode() {
 		setTheme(theme === Theme.Dark ? Theme.Cupcake : Theme.Dark);
 	};
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		setLocalTheme(localStorage.getItem("theme"));
 		localTheme !== null && localTheme !== "" && setTheme(localTheme);
 	}, [localTheme]);
@@ -32,12 +32,12 @@ export default function CssMode() {
 	}, [localTheme, theme]);
 
 	return (
-		<label title="css color mode" className="swap-rotate swap pl-4">
+		<label title="css color mode" className="swap swap-rotate pl-4">
 			<input
 				title="mode"
 				type="checkbox"
 				onClick={toggleTheme}
-				checked={theme === Theme.Dark}
+				defaultChecked={theme === Theme.Dark}
 			/>
 			<svg
 				className="swap-off h-8 w-8 fill-current"
