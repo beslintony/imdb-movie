@@ -1,8 +1,15 @@
-export default function Home() {
+import Header from "@/components/header";
 
-  return (
-    <main>
-      <h1>Home</h1>
-    </main>
-  )
+export default function Home() {
+	const navItems = [
+		{ name: "Movies", route: "/movies" },
+		{ name: "TV Shows", route: "/tv-shows" },
+		{ name: "People", route: "/people" },
+	];
+
+	return (
+		<>
+			<Header navItems={navItems} />
+		</>
+	);
 }
